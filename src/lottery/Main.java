@@ -3,19 +3,17 @@ package lottery;
 public class Main {
 
 	public static void main(String[] args) {
-		int initialNumbs[] = {6, 25, 14, 19, 5, 9};
+		
+		//LotteryTicket z = new LotteryTicket();
+		//z.printTicket();
+		
+		int initialNumbs[] = {9, 2, 7, 4, 11, 13};
 		LotteryTicket x = new LotteryTicket(initialNumbs);
-		x.printTicket();
 		
-		initialNumbs[3] = 35;
-		x.printTicket();
+		Integer extractedNum[] = {9, 2, 17, 4, 11, 13};
 		
-		LotteryTicket y = new LotteryTicket(initialNumbs);
-		y.printTicket();
+		System.out.println(x.isWinner(extractedNum));
 		
-		LotteryTicket z = new LotteryTicket();
-		z.printTicket();
-	
 	}
 	
 }

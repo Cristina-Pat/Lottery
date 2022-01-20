@@ -46,7 +46,32 @@ public class LotteryTicket {
 		}
 		
 	}
-	
+	/*
+	 * Each number on the ticked is compared with the extracted number list.
+	 * If the number is found on the list, go to next number, else return false.
+	 * If all the numbers are found, return true.
+	 * 
+	 * @param Integer[] extractedNum A list of extracted numbers.
+	 * 
+	 * @return Return true is all the numbers are found.
+	 * 
+	 */
+	public boolean isWinner(Integer[] extractedNum) {
+		
+		for( int i = 0; i < numbers.length; i++) {
+			boolean found = false;
+			for (int j = 0; j < extractedNum.length; j++) {
+				if(numbers[i] == extractedNum[j]) {
+					found = true;
+				}
+			} 
+			if (found == false) {
+				return false;
+			}
+		}
+		return true;
+	}
+		
 	
 	public void printTicket() {
 		for (int num : numbers) {
@@ -55,7 +80,7 @@ public class LotteryTicket {
 		System.out.println(" ");
 	}
 
-	private boolean contains(int list[], int number) {
+	private boolean contains(int[] list, int number) {
 		for (int n : list) {
 			if (n == number) {
 				return true;
