@@ -3,8 +3,22 @@ package lottery;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * This class implements a lottery system. 
+ * 
+ * @author Cristina Pat
+ *
+ */
+
 public class LotteryTicket {
-	int numbers[];
+	int numbers[]; // field of the class LotteryTicket
+
+	/**
+	 * Constructor for objects of class LotteryTicket
+	 * 
+	 * @param initialNumbs A list of a ticket numbers.
+	 * 
+	 */
 
 	public LotteryTicket(int initialNumbs[]) {
 		numbers = new int[6];
@@ -13,6 +27,10 @@ public class LotteryTicket {
 		}
 	}
 
+	/**
+	 * Constructor for objects of class LotteryTicket
+	 * Numbers on the ticket are random generated.
+	 */
 	public LotteryTicket() {
 		generate2();
 	}
@@ -30,7 +48,10 @@ public class LotteryTicket {
 			numbers[i] = x;
 		}	
 	}
-
+ 
+	/*
+	 * Generate a list of random numbers.
+	 */
 	private void generate2() {
 		ArrayList<Integer> extractList = new ArrayList<>();
 		for (Integer i = 0; i < 49; i++) {
@@ -46,7 +67,7 @@ public class LotteryTicket {
 		}
 		
 	}
-	/*
+	/**
 	 * Each number on the ticked is compared with the extracted number list.
 	 * If the number is found on the list, go to next number, else return false.
 	 * If all the numbers are found, return true.
@@ -72,14 +93,20 @@ public class LotteryTicket {
 		return true;
 	}
 		
-	
-	public void printTicket() {
+	/*
+	 * List the numbers on the ticket.
+	 */
+	public void printTicket() { 
 		for (int num : numbers) {
 			System.out.print(num + " ");
 		}
 		System.out.println(" ");
 	}
 
+	
+	/*
+	 * Check if a number is on a list.
+	 */
 	private boolean contains(int[] list, int number) {
 		for (int n : list) {
 			if (n == number) {
